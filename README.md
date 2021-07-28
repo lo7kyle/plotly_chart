@@ -21,7 +21,7 @@ There wasn't so much analysis for this challenge as there were more analysis of 
 ### Results:
 The results of this challenge was a webpage dashboard that hosts 3 plots: a gauge, a bar chart, and a bubble chart and a section for metadata. Each chart displayed it's own unique information. Below is the dashboard overview. 
 
-![Dashboard Overview](https://github.com/lo7kyle/UFOs/blob/main/static/images/data.PNG) 
+![Dashboard Overview](https://github.com/lo7kyle/plotly_chart/blob/main/static/images/dashboard%20overview.png) 
 
 
 I next displayed the meta data in the same line as some belly button washing information and a link to the National Geographic website for more belly button bacteria information. I also found fitting to have the gauge share the same row as the information. For the metadata aspect of this challenge we were given a lot of hints throught the module. This is done by using the d3 library and updating the page on change.
@@ -36,12 +36,12 @@ I next displayed the meta data in the same line as some belly button washing inf
           <div id="sample-metadata" class="panel-body"></div>
 ```
 
-![Belly Button Washing](https://github.com/lo7kyle/UFOs/blob/main/static/images/home-button.PNG) 
+![Belly Button Washing](https://github.com/lo7kyle/plotly_chart/blob/main/static/images/metadata%20and%20gauge.PNG) 
 
 At the bottom of the dashboard I had the bar chart and bubble chart where it showed the number of bacteria found and per sample. In this section we were asked to create a drop down menu so that the users may choose which chart they want to read. This is probably so that  users will not be overwhelemed with information. I personally would rather have the option to choose to see both or just 1. Maybe a checkbox and have both boxes initially checked and depending on which box is checked will have the charts displayed. 
 
-![Belly Button Bubble](https://github.com/lo7kyle/UFOs/blob/main/static/images/home-button.PNG) 
-![Belly Button Bar](https://github.com/lo7kyle/UFOs/blob/main/static/images/home-button.PNG) 
+![Belly Button Bubble](https://github.com/lo7kyle/plotly_chart/blob/main/static/images/bubble%20plot.PNG) 
+![Belly Button Bar](https://github.com/lo7kyle/plotly_chart/blob/main/static/images/bar%20chart.PNG) 
 
 Similarly to using the select on change with the metadata, we are using the d3 library, but this time we will be selecting base on the option value. 
 
