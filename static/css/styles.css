@@ -1,0 +1,23 @@
+
+.masthead {
+    height: 60vh;
+    min-height: 80px;
+    background-image: url('../images/header_img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+#vpadding {
+  padding: 15% 0;
+}
+
+#scale_id {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.jumbotron {
+  background: rgba(211, 210, 210, 0.5);
+}

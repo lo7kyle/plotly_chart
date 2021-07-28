@@ -1,3 +1,6 @@
+// python -m http.server
+// http://localhost:8000/
+
 function init() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
@@ -19,9 +22,9 @@ function init() {
     buildMetadata(firstSample);
   });
 }
-
 // Initialize the dashboard
 init();
+
 
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
@@ -100,7 +103,7 @@ function buildCharts(sample) {
     
     };
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", barData, barLayout);
+   // Plotly.newPlot("bar", barData, barLayout);
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
@@ -124,8 +127,28 @@ function buildCharts(sample) {
       margin: { t: 30}
     };
 
-    // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
+    // 3. Use Plotly to plot the data with the layout on initialalizing
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+
+    // On change to the DOM, call getData()
+  d3.selectAll("#charts").on("change", getData);
+  function getData() {
+    var dropdownMenu = d3.select("#charts");
+    // Assign the value of the dropdown menu option to a variable
+    var choice = dropdownMenu.property("value");
+    console.log(choice);
+    if (choice == 'bubbleChart') {
+      Plotly.purge("bar");
+       Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+    }
+    else  {
+      Plotly.purge("bubble");
+      Plotly.newPlot("bar", barData, barLayout);
+    }    
+  };
+  getData(); 
+
+
   
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
@@ -138,11 +161,11 @@ function buildCharts(sample) {
       axis: {range: [null,9], tickwidth: 1, tickclolor: "#"},
       bar: { color: "808080" },
       steps :[
-        {range: [0,2], color: "#6A5ACD"},
+        {range: [0,2], color: "rgba(0, 105, 11, .5)"},
         {range: [2,4], color: "#40E0D0"},
         {range: [4,6], color: "#90EE90"},
         {range: [6,8], color: "#D2B48C"},
-        {range: [8,10], color: "#8B4513"},
+        {range: [8,10], color: "#e2b08c"},
       ],
       threshold: {
         line: {color: "red", width: 4},
@@ -154,13 +177,15 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      width: 500, height: 400, margin: { t: 0, b: 0 }
+      width: 600, height: 600, margin: { t: 0, b: 0 },
+      paper_bgcolor: "#EBDC98"
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
 
   });
-
 }
+
+
 

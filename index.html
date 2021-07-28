@@ -7,18 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bellybutton Biodiversity</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
-<body>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+<header class="masthead">
+    <div class="container h-100">
+        <div class="jumbotron text-center" style="background-color: none ;">
+          <h1 style="color:black">Belly Button Biodiversity Dashboard</h1>
+          <p style="color:black"><b>Use the interactive charts below to explore the dataset</b></p>
+        </div>
       </div>
-    </div>
-    <div class="row">
+  </header>
+
+<body>
+  <div class="container-fluid"> 
+    <div class="row" style="background-color: #81BCBD;" id = "belly-washing">
       <div class="col-md-2">
         <div class="well">
           <h5>Test Subject ID No.:</h5>
@@ -32,23 +35,53 @@
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
-      <div class="col-md-5">
-        <div id="bar"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
+      <div class= "col-md-5">
+         <div class = "media">
+            <div class = "media-body">
+                <h2>Belly Button Information</h2>
+                <h3 class= "media-heading">Ways to Clean Your BellyButton</h3>
+                <p>There are many benfits to cleaning your belly button. A dirty belly button can lead to yeast infections, smell, and dead skin cells. There are different techniques used for cleaning depending on if you have an innie bellybutton or an outie bellybutton</p>
+                <p><h5><b>Outie Belly Button</b></h5></p>
+                <ol>
+                  <li>Dip a cotton swab in rubbing alcohol and gently rub the surfaces inside your bellybutton. If the swab gets dirty, throw it away and start a new one.</li>
+                  <li>Once the cotton swab comes out clean, use a fresh one dipped in water to rinse the alcohol out of your bellybutton so it doesn’t dry your skin</li>
+                  <li>Following your shower, gently dry the inside of your bellybutton with another clean, dry swab or the corner of a towel or washcloth.</li>
+                </ol>  
+                <p><h5><b>Innie Belly Button</b></h5></p>
+                <ol>
+                  <li>Lather up a washcloth, and gently scrub your bellybutton. Rinse off the soap.</li>
+                  <li>After your shower, dry your bellybutton thoroughly.</li>
+                  <li>Massage some lotion onto your bellybutton.</li>
+                </ol>  
+                <p>For more info about belly button baceria check out the link below!</p>
+                <p><a href="https://www.nationalgeographic.org/article/belly-button-biodiversity/">National Geographic: Belly-Button Biodiversity</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="gauge"></div>
+          <h5><b>Please wash your belly button as many times as the number above per week for research purposes!</b></h5>
+          </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bubble"></div>
+
+
+<div class="container-fluid" style="background-color: #55546E;" id = "popchart">
+  <div class="col-md-12">
+    <h2 style="color:#EBDC98;">Bacteria Population</h2>
+    <select id = "charts">
+        <option value="bubbleChart">Bubble Chart</option>
+        <option value="barChart">Bar Chart</option>
+      </select>
+      <div id="bar"></div>
+      <div id="bubble"></div>
       </div>
-    </div>
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="js/charts.js"></script>
+  <script src="static/js/charts.js"></script>
 
 </body>
 
